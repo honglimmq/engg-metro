@@ -1,21 +1,7 @@
-//
 //  Control Box - Arduino Uno (Train 2)
 //  Team: T1_C5
-//  Members: Hong Lim, Mingze Song
-//  SerialIn_SerialOut_HM-10_01
-//
-//  Uses hardware serial to talk to the host computer and AltSoftSerial for communication with the bluetooth module
-//
-//  What ever is entered in the serial monitor is sent to the connected device
-//  Anything received from the connected device is copied to the serial monitor
-//  Does not send line endings to the HM-10
-//
-//  Pins
-//  BT VCC to Arduino 5V out.
-//  BT GND to GND
-//  Arduino D8 (SS RX) - BT TX no need voltage divider
-//  Arduino D9 (SS TX) - BT RX through a voltage divider (5v to 3.3v)
-//
+//  Members:  Sabbib Chowdhury, Hong Lim, Trideep Lal Das, Mingze Song, Mohammad Akhlaquzzaman Ferdous, and Mingze Song
+
 #include <AltSoftSerial.h>
 #include "Parse.h"
 #include "TrainStatus.h"
@@ -61,10 +47,9 @@ int rs_endIndex  = -1;
 int rs_startIndex = -1;
 
 // **** LCD ****
-LiquidCrystal_PCF8574 lcd(0x27); /
+LiquidCrystal_PCF8574 lcd(0x27); 
 
-AltSoftSerial BTserial;
-// https://www.pjrc.com/teensy/td_libs_AltSoftSerial.html
+AltSoftSerial BTserial; // https://www.pjrc.com/teensy/td_libs_AltSoftSerial.html
 
 boolean NL = true;
 Parse parser = Parse();
